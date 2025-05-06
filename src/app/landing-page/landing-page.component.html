@@ -1,0 +1,144 @@
+
+<section class="bg-primary text-white text-center py-5">
+    <div class="container">
+      <h1 class="display-4 fw-bold">Quick Rentals – Explore the Best Bikes in Mysore</h1>
+      <p class="lead">Choose your start and end dates to book your ride now</p>
+    </div>
+  </section>
+  
+
+  <section class="py-5 bg-light">
+    <div class="container">
+      <h2 class="text-center mb-5 fw-bold">Rent the Best Bikes in Mysore</h2>
+  
+      <div class="row justify-content-center">
+  
+        
+        <div class="col-md-5 bg-white p-4 shadow rounded me-3 mb-3">
+          <h5 class="fw-bold mb-3 text-primary text-center">Start</h5>
+  
+          <div class="mb-3">
+            <label class="form-label fw-semibold">Start Date</label>
+            <input type="date" class="form-control" [(ngModel)]="startDate" />
+          </div>
+  
+          <div class="mb-3">
+            <label class="form-label fw-semibold">Start Time</label>
+            <input type="time" class="form-control" [(ngModel)]="startTime" step="1800" />
+          </div>
+        </div>
+  
+ 
+        <div class="col-md-5 bg-white p-4 shadow rounded mb-3">
+          <h5 class="fw-bold mb-3 text-success text-center">End</h5>
+  
+          <div class="mb-3">
+            <label class="form-label fw-semibold">End Date</label>
+            <input type="date" class="form-control" [(ngModel)]="endDate" />
+          </div>
+  
+          <div class="mb-3">
+            <label class="form-label fw-semibold">End Time</label>
+            <input type="time" class="form-control" [(ngModel)]="endTime" step="1800"/>
+          </div>
+        </div>
+ 
+        <div class="col-12 text-center mt-4">
+          <button class="btn btn-primary btn-lg px-5 py-2 shadow-sm">Search Bikes</button>
+        </div>
+  
+      </div>
+    </div>
+  </section>
+  
+
+  <section class="py-5 bg-light">
+    <div class="container">
+      <h2 class="text-center text-dark fw-bold mb-5">Explore Our Bike Collection</h2>
+  
+      <div class="row g-4">
+        <div class="col-md-4">
+          <div class="card shadow-lg border-0">
+            <img src="https://via.placeholder.com/350x200?text=Scooters" class="card-img-top" alt="Scooters">
+            <div class="card-body text-center">
+              <h5 class="card-title text-primary">Scooters</h5>
+              <p class="card-text">Perfect for short city rides. Fast, efficient, and fuel-friendly. Rent a scooter today!</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-4">
+          <div class="card shadow-lg border-0">
+            <img src="https://via.placeholder.com/350x200?text=Sports+Bikes" class="card-img-top" alt="Sports Bikes">
+            <div class="card-body text-center">
+              <h5 class="card-title text-danger">Sports Bikes</h5>
+              <p class="card-text">For the adrenaline junkie in you. Ride with power and speed through the streets!</p>
+            </div>
+          </div>
+        </div>
+  
+        <div class="col-md-4">
+          <div class="card shadow-lg border-0">
+            <img src="https://via.placeholder.com/350x200?text=Hill+Bikes" class="card-img-top" alt="Hill Bikes">
+            <div class="card-body text-center">
+              <h5 class="card-title text-success">Hill Bikes</h5>
+              <p class="card-text">Conquer the toughest terrains with our specialized hill bikes. Adventure awaits!</p>
+            </div>
+          </div>
+        </div>
+  
+      </div>
+  
+      <div class="text-center mt-4">
+        <button class="btn btn-primary btn-lg">Browse All Categories</button>
+      </div>
+  
+    </div>
+  </section>
+
+  <section class="py-5 bg-white">
+    <div class="container">
+      <h2 class="text-center text-dark fw-bold mb-5">What Our Users Say</h2>
+  
+      <div class="d-flex overflow-auto" style="scroll-snap-type: x mandatory; padding-bottom: 10px; gap: 20px;">
+        <div class="card shadow-sm" style="flex: 0 0 300px; scroll-snap-align: start;">
+          <div class="card-body">
+            <p class="card-text">“The bike was in excellent condition and the booking process was super smooth. Highly recommended!”</p>
+          </div>
+          <div class="card-footer bg-white border-0 d-flex align-items-center">
+            <img src="https://i.pravatar.cc/40?img=1" class="rounded-circle me-2" alt="User 1">
+            <strong>Ravi Kumar</strong>
+          </div>
+        </div>
+        <div class="card shadow-sm" style="flex: 0 0 300px; scroll-snap-align: start;">
+          <div class="card-body">
+            <p class="card-text">“Great service in Mysore. The support team was helpful when I had questions about pickup timings.”</p>
+          </div>
+          <div class="card-footer bg-white border-0 d-flex align-items-center">
+            <img src="https://i.pravatar.cc/40?img=2" class="rounded-circle me-2" alt="User 2">
+            <strong>Priya Desai</strong>
+          </div>
+        </div>
+
+        <div class="card shadow-sm" style="flex: 0 0 300px; scroll-snap-align: start;">
+          <div class="card-body">
+            <p class="card-text">“I booked a scooter for 2 days — best experience ever! Definitely coming back.”</p>
+          </div>
+          <div class="card-footer bg-white border-0 d-flex align-items-center">
+            <img src="https://i.pravatar.cc/40?img=3" class="rounded-circle me-2" alt="User 3">
+            <strong>Ahmed Shariff</strong>
+          </div>
+        </div>
+  
+      </div>
+    </div>
+  </section>
+  
+  
+  
+  
+  
+ 
+  
+
+  

@@ -1,0 +1,45 @@
+<div class="container my-5">
+    <div class="row justify-content-center">
+      <div class="col-md-8">
+        <div class="card shadow rounded-4 border-0 p-4">
+          <h4 class="mb-4 fw-bold text-center">Booking Confirmation</h4>
+  
+          <!-- Booking Summary -->
+          <div class="mb-4">
+            <h6 class="fw-semibold">Bike Details</h6>
+            <p class="mb-1">🚴 Bike: <strong>Royal Enfield Classic 350</strong></p>
+            <p class="mb-1">📅 From: <strong>{{ startDate }} {{ startTime }}</strong></p>
+            <p class="mb-1">📅 To: <strong>{{ endDate }} {{ endTime }}</strong></p>
+            <p class="mb-0">💰 Total Price: <strong>₹2,400</strong></p>
+          </div>
+  
+          <!-- Payment Options -->
+          <div class="mb-4">
+            <h6 class="fw-semibold mb-3">Select Payment Method</h6>
+  
+            <div class="form-check mb-2">
+              <input class="form-check-input" type="radio" name="paymentMode" id="upi" [(ngModel)]="paymentMethod" value="UPI" checked>
+              <label class="form-check-label" for="upi">UPI</label>
+            </div>
+  
+            <div class="form-check mb-2">
+              <input class="form-check-input" type="radio" name="paymentMode" id="card" [(ngModel)]="paymentMethod" value="Card">
+              <label class="form-check-label" for="card">Credit / Debit Card</label>
+            </div>
+  
+            <div class="form-check">
+              <input class="form-check-input" type="radio" name="paymentMode" id="cod" [(ngModel)]="paymentMethod" value="Cash">
+              <label class="form-check-label" for="cod">Cash on Delivery</label>
+            </div>
+          </div>
+  
+          <!-- Confirm Button -->
+          <div class="text-center">
+            <button class="btn btn-success px-5 py-2" (click)="confirmBooking()">Confirm & Pay</button>
+          </div>
+  
+        </div>
+      </div>
+    </div>
+  </div>
+  
