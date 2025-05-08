@@ -4,6 +4,7 @@ import { SignupComponent } from './signup/signup.component';
 import { LoginComponent } from './login/login.component';
 import { LandingPageComponent } from './landing-page/landing-page.component';
 import { ConfirmComponent } from './confirm/confirm.component';
+import { CatalogComponent } from './catalog/catalog.component';
 
 
 const routes: Routes = [
@@ -11,6 +12,7 @@ const routes: Routes = [
   { path: 'login', component: LoginComponent },
   { path: 'signup', component: SignupComponent },
   {path: 'confirm' , component: ConfirmComponent },
+  {path:'avilablebikes', component: CatalogComponent},
   { path: '', redirectTo: '/login', pathMatch: 'full' },
 ];
 

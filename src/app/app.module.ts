@@ -11,6 +11,9 @@ import { LoginComponent } from './login/login.component';
 import { SignupComponent } from './signup/signup.component';
 import { CatalogComponent } from './catalog/catalog.component';
 import { ConfirmComponent } from './confirm/confirm.component';
+import { AvailableBikesService } from './catalog/available-bikes.service';
+import { HttpClientModule } from '@angular/common/http';
+import { CatalogSearchPipe } from './catalog/catalog-search.pipe';
 
 @NgModule({
   declarations: [
@@ -21,15 +24,18 @@ import { ConfirmComponent } from './confirm/confirm.component';
     LoginComponent,
     SignupComponent,
     CatalogComponent,
-    ConfirmComponent
+    ConfirmComponent,
+    CatalogSearchPipe
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule, 
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    HttpClientModule
+    
   ],
-  providers: [],
+  providers: [AvailableBikesService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

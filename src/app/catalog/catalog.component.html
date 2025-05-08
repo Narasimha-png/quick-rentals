@@ -1,26 +1,27 @@
+<div *ngIf="selected == false ; else confirmPage">
 <div class="container my-5">
-    <!-- Filter Row -->
+
     <div class="row mb-4 align-items-end">
       <div class="col-md-3">
         <label class="form-label fw-bold">Category Filter</label>
-        <select class="form-select">
+        <select class="form-select" [(ngModel)]="searchFilter">
           <option value="">All</option>
-          <option value="scooty">Scooty</option>
-          <option value="sports">Sports Bike</option>
-          <option value="hill">Hill Bike</option>
+          <option value="SCOOTER">Scooty</option>
+          <option value="BIKE">Sports Bike</option>
+          <option value="EV">Electric Bike</option>
         </select>
       </div>
       <div class="col-md-3">
         <label class="form-label fw-bold">Search</label>
-        <input type="text" class="form-control" placeholder="Search bikes...">
+        <input type="text" class="form-control" placeholder="Search bikes..." [(ngModel)]="searchText">
       </div>
       <div class="col-md-3 ms-auto text-end">
-        <small class="text-muted">Start: <strong>2025-05-08</strong></small><br>
-        <small class="text-muted">End: <strong>2025-05-10</strong></small>
+        <small class="text-muted">Start: <strong>{{startDateTime}}</strong></small><br>
+        <small class="text-muted">End: <strong>{{endDateTime}}</strong></small>
       </div>
     </div>
   
-    <!-- Card Display -->
+  
     <div class="card shadow rounded-4 p-4 border-0 bg-white">
       <div class="row align-items-center">
         <div class="col-md-4">
@@ -42,16 +43,23 @@
   
   <div class="container my-5">
     <div class="row justify-content-center">
-      <div class="col-md-4">
+      <div class="col-md-4 mb-4" *ngFor="let bike of availableBikes | catalogSearch:searchText : searchFilter">
         <div class="card shadow rounded-4 border-0">
-          <img src="https://source.unsplash.com/400x250/?motorbike" class="card-img-top rounded-top-4" alt="Bike Image">
+          <img src="https://source.unsplash.com/400x250/?motorbike" class="card-img-top rounded-top-4" alt="Bike Image" style="object-fit: cover; height: 200px;">
           <div class="card-body">
-            <h5 class="card-title fw-bold">Royal Enfield Classic 350</h5>
-            <p class="card-text text-muted mb-2">Price: ₹1,200/day</p>
-            <button class="btn btn-primary w-100">Book Now</button>
+            <h5 class="card-title fw-bold">{{bike.vehicleName}}</h5>
+            <p class="card-text text-muted mb-2">Price: {{bike.price | currency:'INR'}}/day</p>
+            <p class="card-text text-muted mb-2">{{bike.vehicleType}}</p>
+            <button class="btn btn-primary w-100" (click)="bookBike(bike)">Book Now</button>
           </div>
         </div>
       </div>
     </div>
   </div>
   
+  
+</div>
+
+<ng-template #confirmPage>
+  <app-confirm [booking]="exportBike"></app-confirm>
+</ng-template>

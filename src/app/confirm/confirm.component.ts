@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 
 @Component({
   selector: 'app-confirm',
@@ -7,10 +7,8 @@ import { Component } from '@angular/core';
 })
 export class ConfirmComponent {
 
-  startDate = '2025-05-10';
-endDate = '2025-05-12';
-startTime = '10:00';
-endTime = '18:00';
+  @Input()
+  booking:any ;
 paymentMethod = 'UPI';
 
 confirmBooking() {

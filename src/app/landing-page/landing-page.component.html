@@ -6,50 +6,79 @@
     </div>
   </section>
   
-
   <section class="py-5 bg-light">
     <div class="container">
       <h2 class="text-center mb-5 fw-bold">Rent the Best Bikes in Mysore</h2>
   
       <div class="row justify-content-center">
-  
-        
+      
         <div class="col-md-5 bg-white p-4 shadow rounded me-3 mb-3">
-          <h5 class="fw-bold mb-3 text-primary text-center">Start</h5>
+          <h5 class="fw-bold mb-3 text-primary text-center">From</h5>
   
           <div class="mb-3">
-            <label class="form-label fw-semibold">Start Date</label>
+            <label class="form-label fw-semibold">Date</label>
             <input type="date" class="form-control" [(ngModel)]="startDate" />
           </div>
   
           <div class="mb-3">
-            <label class="form-label fw-semibold">Start Time</label>
-            <input type="time" class="form-control" [(ngModel)]="startTime" step="1800" />
+            <label class="form-label fw-semibold">Time</label>
+            <div class="row g-2">
+              <div class="col-4">
+                <select class="form-select form-select-sm" [(ngModel)]="startHour">
+                  <option *ngFor="let h of twelveHourRange" [value]="h">{{ h }}</option>
+                </select>
+              </div>
+              <div class="col-4">
+                <select class="form-select form-select-sm" [(ngModel)]="startMinute">
+                  <option *ngFor="let m of minutes" [value]="m">{{ m }}</option>
+                </select>
+              </div>
+              <div class="col-4">
+                <select class="form-select form-select-sm" [(ngModel)]="startMeridiem">
+                  <option *ngFor="let m of meridiems" [value]="m">{{ m }}</option>
+                </select>
+              </div>
+            </div>
           </div>
         </div>
   
- 
         <div class="col-md-5 bg-white p-4 shadow rounded mb-3">
-          <h5 class="fw-bold mb-3 text-success text-center">End</h5>
+          <h5 class="fw-bold mb-3 text-success text-center">To</h5>
   
           <div class="mb-3">
-            <label class="form-label fw-semibold">End Date</label>
+            <label class="form-label fw-semibold">Date</label>
             <input type="date" class="form-control" [(ngModel)]="endDate" />
           </div>
   
           <div class="mb-3">
-            <label class="form-label fw-semibold">End Time</label>
-            <input type="time" class="form-control" [(ngModel)]="endTime" step="1800"/>
+            <label class="form-label fw-semibold">Time</label>
+            <div class="row g-2">
+              <div class="col-4">
+                <select class="form-select form-select-sm" [(ngModel)]="endHour">
+                  <option *ngFor="let h of twelveHourRange" [value]="h">{{ h }}</option>
+                </select>
+              </div>
+              <div class="col-4">
+                <select class="form-select form-select-sm" [(ngModel)]="endMinute">
+                  <option *ngFor="let m of minutes" [value]="m">{{ m }}</option>
+                </select>
+              </div>
+              <div class="col-4">
+                <select class="form-select form-select-sm" [(ngModel)]="endMeridiem">
+                  <option *ngFor="let m of meridiems" [value]="m">{{ m }}</option>
+                </select>
+              </div>
+            </div>
           </div>
         </div>
- 
-        <div class="col-12 text-center mt-4">
-          <button class="btn btn-primary btn-lg px-5 py-2 shadow-sm">Search Bikes</button>
-        </div>
   
+        <div class="col-12 text-center mt-4">
+          <button class="btn btn-primary btn-lg px-5 py-2 shadow-sm" (click)="openCatalog()">Search Bikes</button>
+        </div>
       </div>
     </div>
   </section>
+  
   
 
   <section class="py-5 bg-light">
