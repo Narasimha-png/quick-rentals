@@ -1,3 +1,4 @@
+
 <div *ngIf="selected == false ; else confirmPage">
 <div class="container my-5">
 
@@ -43,6 +44,11 @@
   
   <div class="container my-5">
     <div class="row justify-content-center">
+      <div *ngIf="availableBikes.length == 0" class="col-md-8 text-center">
+        <div class="alert alert-info" role="alert">
+          No bikes available for the selected dates.
+        </div>
+      </div>
       <div class="col-md-4 mb-4" *ngFor="let bike of availableBikes | catalogSearch:searchText : searchFilter">
         <div class="card shadow rounded-4 border-0">
           <img src="https://source.unsplash.com/400x250/?motorbike" class="card-img-top rounded-top-4" alt="Bike Image" style="object-fit: cover; height: 200px;">
@@ -50,7 +56,9 @@
             <h5 class="card-title fw-bold">{{bike.vehicleName}}</h5>
             <p class="card-text text-muted mb-2">Price: {{bike.price | currency:'INR'}}/day</p>
             <p class="card-text text-muted mb-2">{{bike.vehicleType}}</p>
+            
             <button class="btn btn-primary w-100" (click)="bookBike(bike)">Book Now</button>
+          
           </div>
         </div>
       </div>
@@ -62,4 +70,5 @@
 
 <ng-template #confirmPage>
   <app-confirm [booking]="exportBike"></app-confirm>
+
 </ng-template>

@@ -17,6 +17,7 @@ export class CatalogComponent implements OnInit {
   exportBike:any = null ;
   searchFilter: string = '';
   searchText: string = '';
+
   constructor(private bikeService: AvailableBikesService , private route:ActivatedRoute ) { }
 
   ngOnInit(): void {
@@ -51,11 +52,13 @@ export class CatalogComponent implements OnInit {
   bookBike(bike:any ){
     this.selected = true ;
     this.exportBike = {
-      bike:bike ,
-      startDateTime: this.startDateTime,
-      endDateTime: this.endDateTime
+      
+      pickUpDateTime: this.startDateTime,
+      dropOffDateTime: this.endDateTime,
+      vehicle: bike,
     }
   }
+  
   
 
 }

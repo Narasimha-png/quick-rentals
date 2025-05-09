@@ -6,10 +6,10 @@
 
           <div class="mb-4">
             <h6 class="fw-semibold">Bike Details</h6>
-            <p class="mb-1">🚴 Bike: <strong>{{booking.bike.vehicleName}}</strong></p>
-            <p class="mb-1">📅 From: <strong>{{ booking.startDateTime }} </strong></p>
-            <p class="mb-1">📅 To: <strong>{{booking.endDateTime}}</strong></p>
-            <p class="mb-0">💰 Total Price: <strong>{{booking.bike.price | currency:'INR'}}</strong></p>
+            <p class="mb-1">🚴 Bike: <strong>{{booking.vehicleName}}</strong></p>
+            <p class="mb-1">📅 From: <strong>{{ booking.pickUpDateTime }} </strong></p>
+            <p class="mb-1">📅 To: <strong>{{booking.dropOffDateTime}}</strong></p>
+            <p class="mb-0">💰 Total Price: <strong>{{booking.price | currency:'INR'}}</strong></p>
           </div>
   
           <div class="mb-4">
@@ -31,9 +31,16 @@
             </div>
           </div>
   
-          <div class="text-center">
+          <div *ngIf="bookingStatusString;else confirmBtn;" class="mb-4">
+            <div class="alert alert-success" role="alert">
+              {{bookingStatusString}}
+            </div>
+          </div>
+          <ng-template #confirmBtn>
+          <div class="text-center" >
             <button class="btn btn-success px-5 py-2" (click)="confirmBooking()">Confirm & Pay</button>
           </div>
+          </ng-template>
   
         </div>
       </div>
